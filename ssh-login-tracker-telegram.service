@@ -1,0 +1,16 @@
+[Unit]
+Description=Node.js ssh-login-tracker-telegram
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node /home/ssh-login-tracker-telegram/main.js
+RestartSec=10
+Restart=always
+User=nobody
+Group=nogroup
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/home/ssh-login-tracker-telegram
+
+[Install]
+WantedBy=multi-user.target
